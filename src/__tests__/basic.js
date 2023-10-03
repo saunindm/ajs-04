@@ -1,4 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
 // const { calculateTotal } = require('../calculate.js');
 import calculateTotal from '../calculate'; // второй вариант импорта
 
