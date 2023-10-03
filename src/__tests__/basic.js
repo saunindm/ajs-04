@@ -1,6 +1,6 @@
 /* eslint linebreak-style: ["error", "windows"] */
 // const { calculateTotal } = require('../calculate.js');
-import { calculateTotal } from '../calculate.js'; // второй вариант импорта 
+import calculateTotal from '../calculate'; // второй вариант импорта
 
 test('basic test', () => {
   const result = 4;
@@ -8,41 +8,41 @@ test('basic test', () => {
 });
 
 test('calculateTotal sum without discount', () => {
-	const list = [
-		{
-			id: 456,
-			name: 'Война и мир',
-			count: 3,
-			price: 400
-		},
-		{
-			id: 77,
-			name: 'JavaScript',
-			count: 1,
-			price: 1300
-		}
-	];
+  const list = [
+    {
+      id: 456,
+      name: 'Война и мир',
+      count: 3,
+      price: 400,
+    },
+    {
+      id: 77,
+      name: 'JavaScript',
+      count: 1,
+      price: 1300,
+    },
+  ];
 
-	const result = calculateTotal(list);
-	expect(result).toBe(2500);
+  const result = calculateTotal(list);
+  expect(result).toBe(2500);
 });
 
 test('calculateTotal sum with discount', () => {
-	const list = [
-		{
-			id: 456,
-			name: 'Война и мир',
-			count: 3,
-			price: 401
-		},
-		{
-			id: 77,
-			name: 'JavaScript',
-			count: 1,
-			price: 1300
-		}
-	];
+  const list = [
+    {
+      id: 456,
+      name: 'Война и мир',
+      count: 3,
+      price: 401,
+    },
+    {
+      id: 77,
+      name: 'JavaScript',
+      count: 1,
+      price: 1300,
+    },
+  ];
 
-	const result = calculateTotal(list, true);
-	expect(result).toBeCloseTo(2230.173); // когда требуется сравнение дробных чисел
+  const result = calculateTotal(list, true);
+  expect(result).toBeCloseTo(2230.173); // когда требуется сравнение дробных чисел
 });
